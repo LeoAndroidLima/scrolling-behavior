@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Parallax Scrolling Website | Vanilla Javascript</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <a href="#" class="logo">Jungle</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>It's time for a new</span><br>Adveture</h2>
+        <img src="./img/bird1.png" id="bird1" alt="bird1">
+        <img src="./img/bird2.png" id="bird2" alt="bird2">
+        <img src="./img/forest.png" id="forest" alt="forest">
+        <a href="#" id="btn">Explore</a>
+        <img src="./img/rocks.png" id="rocks" alt="rocks">
+        <img src="./img/water.png" id="water" alt="water">
+    </section>
+    <div class="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed libero ut nibh eleifend interdum. Maecenas
+            faucibus nunc at ultrices finibus. Fusce tempor sem vel hendrerit ultricies. Duis egestas gravida risus id
+            mattis. Etiam at pellentesque mauris, at iaculis enim. Fusce quis lacus arcu. Aenean metus risus, tincidunt
+            ut nisi ac, efficitur varius felis. Vivamus lorem mauris, pellentesque vel efficitur id, venenatis commodo
+            magna. Ut pharetra, nibh nec aliquam vulputate, purus purus fringilla orci, tempus dignissim massa ligula
+            nec tortor. <br><br>
+            Nunc in enim sit amet nisi aliquam congue. Nullam lacinia ipsum neque, sit amet tristique eros suscipit eu.
+            In hac habitasse platea dictumst. Duis ultricies sagittis tortor, sed placerat mi consectetur a. Cras est
+            sem, porta sit amet faucibus in, rhoncus nec ipsum. Praesent sed nibh eu tellus iaculis semper. Vestibulum
+            nibh ligula, eleifend sit amet sapien eget, malesuada condimentum purus. <br><br>
+            Nulla faucibus ipsum sed eros hendrerit blandit. Fusce eu tincidunt felis. Mauris ultricies ornare feugiat.
+            In semper sit amet nisi ut pellentesque. Mauris sed iaculis diam, in tempus libero. Quisque ut turpis id
+            mauris dapibus consequat. Donec ut varius libero. Ut scelerisque sit amet tortor ut ultricies. <br><br>
+            Sed porta pretium lectus eu commodo. Donec aliquam sollicitudin orci, vel tristique diam blandit eget. Morbi
+            porttitor tellus at mauris dapibus, ac gravida sem pharetra. Quisque volutpat dapibus tincidunt. Curabitur
+            consequat convallis pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+            cubilia curae; Nunc tempor ante vitae congue malesuada. Proin id blandit libero. Vivamus faucibus neque
+            lorem, ullamcorper convallis erat mollis in. Quisque eget metus sit amet justo feugiat molestie. Vestibulum
+            mollis lacus ac felis luctus, vel facilisis justo tempus. Vivamus scelerisque orci eget magna dictum rutrum.
+            Curabitur vitae convallis nisl. <br><br>
+            Vestibulum tincidunt, neque nec tristique tincidunt, lacus tortor tristique risus, sed pulvinar urna augue
+            ac neque. Integer eget lectus eu sapien rutrum ultrices. Donec eu velit sit amet velit blandit sodales eget
+            a magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean consectetur, eros a volutpat
+            dapibus, diam libero volutpat mi, et molestie arcu erat laoreet neque. Etiam ullamcorper libero sapien,
+            consequat tristique leo varius at. Aliquam erat volutpat. Fusce efficitur orci quis ornare posuere. Nunc
+            laoreet sodales urna. Nulla venenatis eros enim, quis egestas tortor varius ut. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Vestibulum iaculis nunc sit amet mi vulputate rhoncus. <br><br>
+        </p>
+    </div>
+
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let forest = document.getElementById('forest');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let water = document.getElementById('water');
+
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+
+            forest.style.top = value * 0.25 + 'px';
+
+            btn.style.marginTop = value * 1.5 + 'px';
+
+            rocks.style.top = value * -0.12 + 'px';
+
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+
+</html>
